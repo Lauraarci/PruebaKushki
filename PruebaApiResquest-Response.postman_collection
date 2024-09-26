@@ -1,0 +1,706 @@
+{
+	"info": {
+		"_postman_id": "4f5e9603-92df-4f5a-8c97-a20aebb19e81",
+		"name": "Prueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30746324"
+	},
+	"item": [
+		{
+			"name": "Card Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Public-Merchant-Id",
+						"value": "a612670532f5403c95fa64423e9c48de",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"card\": {\r\n    \"name\": \"Laura Arciniegas\",\r\n    \"number\": \"5451951574925480\",\r\n    \"expiryMonth\": \"06\",\r\n    \"expiryYear\": \"29\",\r\n    \"cvv\": \"311\"\r\n  },\r\n  \"totalAmount\": 149900,\r\n  \"currency\": \"COP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-uat.kushkipagos.com/card/v1/tokens",
+					"protocol": "https",
+					"host": [
+						"api-uat",
+						"kushkipagos",
+						"com"
+					],
+					"path": [
+						"card",
+						"v1",
+						"tokens"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Card Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Public-Merchant-Id",
+								"value": "a612670532f5403c95fa64423e9c48de",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"card\": {\r\n    \"name\": \"Laura Arciniegas\",\r\n    \"number\": \"5451951574925480\",\r\n    \"expiryMonth\": \"06\",\r\n    \"expiryYear\": \"29\",\r\n    \"cvv\": \"311\"\r\n  },\r\n  \"totalAmount\": 149900,\r\n  \"currency\": \"COP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-uat.kushkipagos.com/card/v1/tokens",
+							"protocol": "https",
+							"host": [
+								"api-uat",
+								"kushkipagos",
+								"com"
+							],
+							"path": [
+								"card",
+								"v1",
+								"tokens"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 26 Sep 2024 02:11:07 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8c8fb86f293e3ee1-BOG"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 c6fc3fc7dd6bcfb116cb455bf53d23ec.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "esNbvFNZoAMEvlA="
+						},
+						{
+							"key": "x-amz-cf-id",
+							"value": "VzkClkkoJVyNdT4hXry8CtKFq_4Csr8cT7FdTAIqXDKVT_bYdHtzIg=="
+						},
+						{
+							"key": "x-amz-cf-pop",
+							"value": "BOG51-P1"
+						},
+						{
+							"key": "x-amzn-requestid",
+							"value": "22c8e423-b9b3-44e4-a227-03b093ef5b7c"
+						},
+						{
+							"key": "x-amzn-trace-id",
+							"value": "Root=1-66f4c2b1-0841dc0c7768accb4d6a5cba"
+						},
+						{
+							"key": "x-cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"8054eb90e669445288c612a9f6814364\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Make a charge",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Private-Merchant-Id",
+						"value": "a19915677e2646af82f4ae95b41e6e1c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"8054eb90e669445288c612a9f6814364\",\r\n    \"amount\": {\r\n        \"currency\": \"COP\",\r\n        \"subtotalIva\": 0,\r\n        \"subtotalIva0\": 149900,\r\n        \"iva\": 0,\r\n        \"ice\": 0,\r\n        \"extraTaxes\": {\r\n            \"iac\": 0,\r\n            \"tasaAeroportuaria\": 0,\r\n            \"agenciaDeViaje\": 0\r\n        }\r\n    },\r\n    \"metadata\": {\r\n        \"contractID\": \"157AB\"\r\n    },\r\n    \"fullResponse\": \"v2\",\r\n    \"ignoreWarnings\": true,\r\n    \"contactDetails\": {\r\n        \"firstName\": \"Laura\",\r\n        \"lastName\": \"Arciniegas\",\r\n        \"email\": \"la.pa.arto@gmail.com\",\r\n        \"documentType\": \"CC\",\r\n        \"documentNumber\": \"1030632221\",\r\n        \"phoneNumber\": \"+573143245561\"\r\n    },\r\n    \"orderDetails\": {\r\n        \"siteDomain\": \"makalubru.com\",\r\n        \"shippingDetails\": {\r\n            \"name\": \"Laura Arciniegas\",\r\n            \"phone\": \"+573143245561\",\r\n            \"addres\": \"Centro 123\",\r\n            \"city\": \"Bogotá D.C.\",\r\n            \"region\": \"Bogotá D.C.\",\r\n            \"country\": \"Colombia\"\r\n        },\r\n        \"billingDetails\": {\r\n            \"name\": \"Laura Arciniegas\",\r\n            \"phone\": \"+573143245561\",\r\n            \"addres\": \"Centro 123\",\r\n            \"city\": \"Bogotá D.C.\",\r\n            \"region\": \"Bogotá D.C.\",\r\n            \"country\": \"Colombia\"\r\n        }\r\n    },\r\n    \"productDetails\": {\r\n        \"product\": [\r\n            {\r\n                \"id\": \"198952AB\",\r\n                \"title\": \"eBook Digital Services\",\r\n                \"price\": 69900,\r\n                \"sku\": \"10101042\",\r\n                \"quantity\": 1\r\n            }\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-uat.kushkipagos.com/card/v1/charges",
+					"protocol": "https",
+					"host": [
+						"api-uat",
+						"kushkipagos",
+						"com"
+					],
+					"path": [
+						"card",
+						"v1",
+						"charges"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Make a charge",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Private-Merchant-Id",
+								"value": "a19915677e2646af82f4ae95b41e6e1c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"8054eb90e669445288c612a9f6814364\",\r\n    \"amount\": {\r\n        \"currency\": \"COP\",\r\n        \"subtotalIva\": 0,\r\n        \"subtotalIva0\": 149900,\r\n        \"iva\": 0,\r\n        \"ice\": 0,\r\n        \"extraTaxes\": {\r\n            \"iac\": 0,\r\n            \"tasaAeroportuaria\": 0,\r\n            \"agenciaDeViaje\": 0\r\n        }\r\n    },\r\n    \"metadata\": {\r\n        \"contractID\": \"157AB\"\r\n    },\r\n    \"fullResponse\": \"v2\",\r\n    \"ignoreWarnings\": true,\r\n    \"contactDetails\": {\r\n        \"firstName\": \"Laura\",\r\n        \"lastName\": \"Arciniegas\",\r\n        \"email\": \"la.pa.arto@gmail.com\",\r\n        \"documentType\": \"CC\",\r\n        \"documentNumber\": \"1030632221\",\r\n        \"phoneNumber\": \"+573143245561\"\r\n    },\r\n    \"orderDetails\": {\r\n        \"siteDomain\": \"makalubru.com\",\r\n        \"shippingDetails\": {\r\n            \"name\": \"Laura Arciniegas\",\r\n            \"phone\": \"+573143245561\",\r\n            \"addres\": \"Centro 123\",\r\n            \"city\": \"Bogotá D.C.\",\r\n            \"region\": \"Bogotá D.C.\",\r\n            \"country\": \"Colombia\"\r\n        },\r\n        \"billingDetails\": {\r\n            \"name\": \"Laura Arciniegas\",\r\n            \"phone\": \"+573143245561\",\r\n            \"addres\": \"Centro 123\",\r\n            \"city\": \"Bogotá D.C.\",\r\n            \"region\": \"Bogotá D.C.\",\r\n            \"country\": \"Colombia\"\r\n        }\r\n    },\r\n    \"productDetails\": {\r\n        \"product\": [\r\n            {\r\n                \"id\": \"198952AB\",\r\n                \"title\": \"eBook Digital Services\",\r\n                \"price\": 69900,\r\n                \"sku\": \"10101042\",\r\n                \"quantity\": 1\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-uat.kushkipagos.com/card/v1/charges",
+							"protocol": "https",
+							"host": [
+								"api-uat",
+								"kushkipagos",
+								"com"
+							],
+							"path": [
+								"card",
+								"v1",
+								"charges"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 26 Sep 2024 02:12:00 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "910"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8c8fb9cd9f223ee1-BOG"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 b4df09a1b0fbbdcf9a7dd7ffc93c1daa.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "esNkfEVSoAMERJg="
+						},
+						{
+							"key": "x-amz-cf-id",
+							"value": "iAPbhPwECTLOHHfpIW63tGVT05LxhGrV81Qukgq9XINfxslHlqJcLw=="
+						},
+						{
+							"key": "x-amz-cf-pop",
+							"value": "BOG51-P1"
+						},
+						{
+							"key": "x-amzn-requestid",
+							"value": "91381521-6a56-4d69-a6d7-931e14589bf4"
+						},
+						{
+							"key": "x-amzn-trace-id",
+							"value": "Root=1-66f4c2e9-5f07a6ef2c8ec56509d7a3a0"
+						},
+						{
+							"key": "x-cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"details\": {\n        \"amount\": {\n            \"currency\": \"COP\",\n            \"subtotalIva\": 0,\n            \"subtotalIva0\": 149900,\n            \"iva\": 0,\n            \"ice\": 0,\n            \"extraTaxes\": {\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0,\n                \"agenciaDeViaje\": 0\n            }\n        },\n        \"approvalCode\": \"000000\",\n        \"approvedTransactionAmount\": 149900,\n        \"binInfo\": {\n            \"bank\": \"Banco de la Produccion S.A. (PRODUBANCO)\",\n            \"binCard\": \"545195\",\n            \"cardCountry\": \"Ecuador\",\n            \"lastFourDigits\": \"5480\",\n            \"type\": \"credit\"\n        },\n        \"cardHolderName\": \"Laura Arciniegas\",\n        \"created\": 1727316720000,\n        \"merchantId\": \"20000000100799492000\",\n        \"merchantName\": \"MAKALU Branch Colombia\",\n        \"paymentBrand\": \"Mastercard\",\n        \"processorBankName\": \"0032~BANCO INTERNACIONAL\",\n        \"requestAmount\": 149900,\n        \"responseCode\": \"000\",\n        \"responseText\": \"Transacción aprobada\",\n        \"transactionId\": \"980587576006678683\",\n        \"transactionReference\": \"c734b0dd-ccbd-4a9e-882b-987645a7cbee\",\n        \"transactionStatus\": \"APPROVAL\",\n        \"transactionType\": \"SALE\"\n    },\n    \"ticketNumber\": \"172874229770280940\",\n    \"transactionReference\": \"c734b0dd-ccbd-4a9e-882b-987645a7cbee\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Void a transaction",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Private-Merchant-Id",
+						"value": "a19915677e2646af82f4ae95b41e6e1c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullResponse\": \"v2\",\r\n    \"amount\": {\r\n        \"subtotalIva\": 0,\r\n        \"subtotalIva0\": 149900,\r\n        \"ice\": 0,\r\n        \"iva\": 0,\r\n        \"currency\": \"COP\"\r\n    },\r\n    \"webhooks\": [\r\n        {\r\n            \"events\": [\r\n                \"approvedTransaction\"\r\n            ],\r\n            \"headers\": [\r\n                {\r\n                    \"label\": \"json\",\r\n                    \"value\": \"12\"\r\n                }\r\n            ],\r\n            \"urls\": [\r\n                \"https://eof2hhkrta4ooo1.m.pipedream.net\"\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-uat.kushkipagos.com/v1/charges/172874229770280940",
+					"protocol": "https",
+					"host": [
+						"api-uat",
+						"kushkipagos",
+						"com"
+					],
+					"path": [
+						"v1",
+						"charges",
+						"172874229770280940"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Void a transaction",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Private-Merchant-Id",
+								"value": "a19915677e2646af82f4ae95b41e6e1c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullResponse\": \"v2\",\r\n    \"amount\": {\r\n        \"subtotalIva\": 0,\r\n        \"subtotalIva0\": 149900,\r\n        \"ice\": 0,\r\n        \"iva\": 0,\r\n        \"currency\": \"COP\"\r\n    },\r\n    \"webhooks\": [\r\n        {\r\n            \"events\": [\r\n                \"approvedTransaction\"\r\n            ],\r\n            \"headers\": [\r\n                {\r\n                    \"label\": \"json\",\r\n                    \"value\": \"12\"\r\n                }\r\n            ],\r\n            \"urls\": [\r\n                \"https://eof2hhkrta4ooo1.m.pipedream.net\"\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-uat.kushkipagos.com/v1/charges/172874229770280940",
+							"protocol": "https",
+							"host": [
+								"api-uat",
+								"kushkipagos",
+								"com"
+							],
+							"path": [
+								"v1",
+								"charges",
+								"172874229770280940"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 26 Sep 2024 02:13:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "893"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8c8fbbcd6a053ed7-BOG"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 c6fc3fc7dd6bcfb116cb455bf53d23ec.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "esNxPGbjIAMEabg="
+						},
+						{
+							"key": "x-amz-cf-id",
+							"value": "b_4gvvTazwuT5puFnxk-HKnA24D8a9TwY3TfJzyBfT48ssjp7evfSw=="
+						},
+						{
+							"key": "x-amz-cf-pop",
+							"value": "BOG51-P1"
+						},
+						{
+							"key": "x-amzn-requestid",
+							"value": "96d57d68-af69-48d2-ae69-789c1c9b4d0f"
+						},
+						{
+							"key": "x-amzn-trace-id",
+							"value": "Root=1-66f4c33a-120f6da00f770eef19334627"
+						},
+						{
+							"key": "x-cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"details\": {\n        \"acquirerBank\": \"IRIS CF\",\n        \"saleTicketNumber\": \"172874229770280940\",\n        \"amount\": {\n            \"extraTaxes\": {\n                \"agenciaDeViaje\": 0,\n                \"tasaAeroportuaria\": 0,\n                \"iac\": 0\n            },\n            \"currency\": \"COP\",\n            \"subtotalIva0\": 149900,\n            \"ice\": 0,\n            \"iva\": 0,\n            \"subtotalIva\": 0\n        },\n        \"approvalCode\": \"000000\",\n        \"approvedTransactionAmount\": 149900,\n        \"binInfo\": {\n            \"bank\": \"Banco de la Produccion S.A. (PRODUBANCO)\",\n            \"binCard\": \"545195\",\n            \"lastFourDigits\": \"5480\",\n            \"type\": \"credit\"\n        },\n        \"cardHolderName\": \"Laura Arciniegas\",\n        \"created\": 1727316720000,\n        \"merchantId\": \"20000000100799492000\",\n        \"merchantName\": \"MAKALU Branch Colombia\",\n        \"paymentBrand\": \"Mastercard\",\n        \"processorBankName\": \"0032~BANCO INTERNACIONAL\",\n        \"requestAmount\": 149900,\n        \"responseCode\": \"000\",\n        \"responseText\": \"Transacción aprobada\",\n        \"transactionId\": \"1727316810979018855\",\n        \"transactionStatus\": \"INITIALIZED\",\n        \"transactionType\": \"VOID\"\n    },\n    \"ticketNumber\": \"661727316810979612\",\n    \"transactionReference\": \"cb8f8384-08cd-4f38-badb-bd083595ed3b\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get transactions list",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Private-Merchant-Id",
+						"value": "a19915677e2646af82f4ae95b41e6e1c",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api-uat.kushkipagos.com/analytics/v1/transactions-list?from=2024-09-24T00:00:00.000&to=2024-09-24T23:00:00.000",
+					"protocol": "https",
+					"host": [
+						"api-uat",
+						"kushkipagos",
+						"com"
+					],
+					"path": [
+						"analytics",
+						"v1",
+						"transactions-list"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2024-09-24T00:00:00.000"
+						},
+						{
+							"key": "to",
+							"value": "2024-09-24T23:00:00.000"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get transactions list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Private-Merchant-Id",
+								"value": "a19915677e2646af82f4ae95b41e6e1c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-uat.kushkipagos.com/analytics/v1/transactions-list?from=2024-09-24T00:00:00.000&to=2024-09-24T23:00:00.000",
+							"protocol": "https",
+							"host": [
+								"api-uat",
+								"kushkipagos",
+								"com"
+							],
+							"path": [
+								"analytics",
+								"v1",
+								"transactions-list"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "2024-09-24T00:00:00.000"
+								},
+								{
+									"key": "to",
+									"value": "2024-09-24T23:00:00.000"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 26 Sep 2024 02:13:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						},
+						{
+							"key": "x-amzn-requestid",
+							"value": "0f86522f-c093-453c-841e-582d7378e23a"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "esN0_G_4IAMErMg="
+						},
+						{
+							"key": "x-amzn-trace-id",
+							"value": "Root=1-66f4c352-6727123d226fe678310812b3;Sampled=1;Lineage=2:7ca7392b:0"
+						},
+						{
+							"key": "x-cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "via",
+							"value": "1.1 2c46ec0cade76e64dbeab14b4dc69e22.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "x-amz-cf-pop",
+							"value": "BOG51-P1"
+						},
+						{
+							"key": "x-amz-cf-id",
+							"value": "MvTEKz394PhfLKbpX7rO8ab5vcSJmLdOGNWEz0DpmQFRkN7f8jKHXQ=="
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains; preload"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "8c8fbc6408773ed7-BOG"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 12,\n    \"data\": [\n        {\n            \"amount\": {\n                \"subtotalIva0\": 5000,\n                \"iva\": 0,\n                \"subtotalIva\": 0,\n                \"extraTaxes\": {\n                    \"agenciaDeViaje\": 0,\n                    \"iac\": 0,\n                    \"tasaAeroportuaria\": 0\n                },\n                \"currency\": \"COP\",\n                \"ice\": 0\n            },\n            \"approved_transaction_amount\": 0,\n            \"bin_card\": \"558917\",\n            \"card_holder_name\": \"Laura Arciniegas\",\n            \"card_type\": \"Credit\",\n            \"contact_details\": {\n                \"document_number\": \"ABCD123456EF\",\n                \"document_type\": \"CURP\",\n                \"email\": \"user@example.com\",\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"phone_number\": \"+523988734644\"\n            },\n            \"country\": \"Colombia\",\n            \"created\": \"2024-09-25T03:32:30.000Z\",\n            \"credential_alias\": \"MAKALU Branch Colombia\",\n            \"credential_id\": \"f84742e3f38542aeb2d726f25753615e\",\n            \"currency_code\": \"COP\",\n            \"foreign_card\": true,\n            \"ice_value\": 0,\n            \"issuing_bank\": \"WooriCard Co., Ltd\",\n            \"iva_value\": 0,\n            \"last_four_digits\": \"3748\",\n            \"merchant_id\": \"20000000100799492000\",\n            \"merchant_name\": \"MAKALU Branch Colombia\",\n            \"metadata\": {\n                \"key1\": \"value1\",\n                \"key2\": \"value2\",\n                \"key0\": \"value0\"\n            },\n            \"payment_brand\": \"Mastercard\",\n            \"plcc\": false,\n            \"processor\": {\n                \"code\": \"K006\",\n                \"message\": \"Transacción declinada.\"\n            },\n            \"processor_type\": \"aggregator_formal\",\n            \"public_credential_id\": \"a612670532f5403c95fa64423e9c48de\",\n            \"request_amount\": 5000,\n            \"response_code\": \"K001\",\n            \"response_text\": \"Cuerpo de la peticion invalido.\",\n            \"send_cvv\": true,\n            \"subtotal_iva\": 0,\n            \"subtotal_iva0\": 5000,\n            \"sync_mode\": \"online\",\n            \"taxes\": {\n                \"agenciaDeViaje\": 0,\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0\n            },\n            \"transaction_id\": \"1727235150774214756\",\n            \"transaction_reference\": \"3a2f2865-9203-4bc7-a5b1-94d35d53e088\",\n            \"transaction_status\": \"DECLINED\",\n            \"transaction_type\": \"SALE\",\n            \"transaction_card_id\": \"3bb94075-e3ef-4fda-bb2d-69030a889e49\",\n            \"card_country_code\": \"KR\",\n            \"card_country\": \"South Korea\",\n            \"original_bin\": \"55891735\",\n            \"processor_code\": \"K001\",\n            \"string_taxes\": \"{\\\"agenciaDeViaje\\\":0,\\\"iac\\\":0,\\\"tasaAeroportuaria\\\":0}\",\n            \"payment_method\": \"card\",\n            \"social_reason\": \"\",\n            \"merchant_category\": \"\",\n            \"tax_id\": \"\",\n            \"masked_credit_card\": \"558917XXXXXX3748\",\n            \"security\": {\n                \"3dsMpi\": \"Merchant\",\n                \"ip\": \"190.24.57.25\",\n                \"reason_code\": \"\"\n            },\n            \"string_metadata\": \"{\\\"key1\\\":\\\"value1\\\",\\\"key2\\\":\\\"value2\\\",\\\"key0\\\":\\\"value0\\\"}\",\n            \"order_details\": {\n                \"billing_details\": {\n                    \"city\": \"Monterrey\",\n                    \"country\": \"Mexico\",\n                    \"name\": \"John Doe\",\n                    \"phone\": \"+523988734644\",\n                    \"region\": \"Nuevo Leon\"\n                },\n                \"shipping_details\": {\n                    \"city\": \"Monterrey\",\n                    \"country\": \"Mexico\",\n                    \"name\": \"John Doe\",\n                    \"phone\": \"+523988734644\",\n                    \"region\": \"Nuevo Leon\"\n                },\n                \"site_domain\": \"example.com\"\n            },\n            \"product_details\": {\n                \"product\": [\n                    {\n                        \"id\": \"198952AB\",\n                        \"price\": 15000,\n                        \"quantity\": 1,\n                        \"sku\": \"10101042\",\n                        \"title\": \"eBook Digital Services\"\n                    }\n                ]\n            }\n        },\n        {\n            \"amount\": {\n                \"subtotalIva0\": 5000,\n                \"iva\": 0,\n                \"subtotalIva\": 0,\n                \"extraTaxes\": {\n                    \"agenciaDeViaje\": 0,\n                    \"iac\": 0,\n                    \"tasaAeroportuaria\": 0\n                },\n                \"currency\": \"COP\",\n                \"ice\": 0\n            },\n            \"approved_transaction_amount\": 0,\n            \"bin_card\": \"558917\",\n            \"card_holder_name\": \"Laura Arciniegas\",\n            \"card_type\": \"Credit\",\n            \"contact_details\": {\n                \"document_number\": \"ABCD123456EF\",\n                \"document_type\": \"CURP\",\n                \"email\": \"user@example.com\",\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"phone_number\": \"+523988734644\"\n            },\n            \"country\": \"Colombia\",\n            \"created\": \"2024-09-25T03:35:30.000Z\",\n            \"credential_alias\": \"MAKALU Branch Colombia\",\n            \"credential_id\": \"f84742e3f38542aeb2d726f25753615e\",\n            \"currency_code\": \"COP\",\n            \"foreign_card\": true,\n            \"ice_value\": 0,\n            \"issuing_bank\": \"WooriCard Co., Ltd\",\n            \"iva_value\": 0,\n            \"last_four_digits\": \"3748\",\n            \"merchant_id\": \"20000000100799492000\",\n            \"merchant_name\": \"MAKALU Branch Colombia\",\n            \"metadata\": {\n                \"key1\": \"value1\",\n                \"key2\": \"value2\",\n                \"key0\": \"value0\"\n            },\n            \"payment_brand\": \"Mastercard\",\n            \"plcc\": false,\n            \"processor\": {\n                \"code\": \"566\",\n                \"message\": \"El token es invalido , o ya fue usado en otra transaccion.\"\n            },\n            \"processor_type\": \"aggregator_formal\",\n            \"public_credential_id\": \"a612670532f5403c95fa64423e9c48de\",\n            \"request_amount\": 5000,\n            \"response_code\": \"577\",\n            \"response_text\": \"El token de la transaccion no es valido\",\n            \"send_cvv\": true,\n            \"subtotal_iva\": 0,\n            \"subtotal_iva0\": 5000,\n            \"sync_mode\": \"online\",\n            \"taxes\": {\n                \"agenciaDeViaje\": 0,\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0\n            },\n            \"transaction_id\": \"1727235330288261732\",\n            \"transaction_reference\": \"3a2f2865-9203-4bc7-a5b1-94d35d53e088\",\n            \"transaction_status\": \"DECLINED\",\n            \"transaction_type\": \"SALE\",\n            \"transaction_card_id\": \"3bb94075-e3ef-4fda-bb2d-69030a889e49\",\n            \"card_country_code\": \"KR\",\n            \"card_country\": \"South Korea\",\n            \"original_bin\": \"55891735\",\n            \"processor_code\": \"577\",\n            \"string_taxes\": \"{\\\"agenciaDeViaje\\\":0,\\\"iac\\\":0,\\\"tasaAeroportuaria\\\":0}\",\n            \"payment_method\": \"card\",\n            \"social_reason\": \"\",\n            \"merchant_category\": \"\",\n            \"tax_id\": \"\",\n            \"masked_credit_card\": \"558917XXXXXX3748\",\n            \"security\": {\n                \"3dsMpi\": \"Merchant\",\n                \"ip\": \"190.24.57.25\",\n                \"reason_code\": \"\"\n            },\n            \"string_metadata\": \"{\\\"key1\\\":\\\"value1\\\",\\\"key2\\\":\\\"value2\\\",\\\"key0\\\":\\\"value0\\\"}\",\n            \"order_details\": {\n                \"billing_details\": {\n                    \"city\": \"Monterrey\",\n                    \"country\": \"Mexico\",\n                    \"name\": \"John Doe\",\n                    \"phone\": \"+523988734644\",\n                    \"region\": \"Nuevo Leon\"\n                },\n                \"shipping_details\": {\n                    \"city\": \"Monterrey\",\n                    \"country\": \"Mexico\",\n                    \"name\": \"John Doe\",\n                    \"phone\": \"+523988734644\",\n                    \"region\": \"Nuevo Leon\"\n                },\n                \"site_domain\": \"example.com\"\n            },\n            \"product_details\": {\n                \"product\": [\n                    {\n                        \"id\": \"198952AB\",\n                        \"price\": 15000,\n                        \"quantity\": 1,\n                        \"sku\": \"10101042\",\n                        \"title\": \"eBook Digital Services\"\n                    }\n                ]\n            }\n        },\n        {\n            \"amount\": {\n                \"subtotalIva0\": 5000,\n                \"iva\": 0,\n                \"subtotalIva\": 0,\n                \"extraTaxes\": {\n                    \"agenciaDeViaje\": 0,\n                    \"iac\": 0,\n                    \"tasaAeroportuaria\": 0\n                },\n                \"currency\": \"COP\",\n                \"ice\": 0\n            },\n            \"approved_transaction_amount\": 0,\n            \"bin_card\": \"545195\",\n            \"card_holder_name\": \"Laura Arciniegas\",\n            \"card_type\": \"Credit\",\n            \"contact_details\": {\n                \"document_number\": \"1030632221\",\n                \"document_type\": \"CC\",\n                \"email\": \"user@example.com\",\n                \"first_name\": \"Laura\",\n                \"last_name\": \"Arciniegas\",\n                \"phone_number\": \"+573143245561\"\n            },\n            \"country\": \"Colombia\",\n            \"created\": \"2024-09-25T03:37:21.000Z\",\n            \"credential_alias\": \"MAKALU Branch Colombia\",\n            \"credential_id\": \"f84742e3f38542aeb2d726f25753615e\",\n            \"currency_code\": \"COP\",\n            \"foreign_card\": true,\n            \"ice_value\": 0,\n            \"issuing_bank\": \"Banco de la Produccion S.A. (PRODUBANCO)\",\n            \"iva_value\": 0,\n            \"last_four_digits\": \"5480\",\n            \"merchant_id\": \"20000000100799492000\",\n            \"merchant_name\": \"MAKALU Branch Colombia\",\n            \"metadata\": {\n                \"key1\": \"value1\",\n                \"key2\": \"value2\",\n                \"key0\": \"value0\"\n            },\n            \"payment_brand\": \"Mastercard\",\n            \"plcc\": false,\n            \"processor\": {\n                \"code\": \"K006\",\n                \"message\": \"Transacción declinada.\"\n            },\n            \"processor_type\": \"aggregator_formal\",\n            \"public_credential_id\": \"a612670532f5403c95fa64423e9c48de\",\n            \"request_amount\": 5000,\n            \"response_code\": \"K001\",\n            \"response_text\": \"Cuerpo de la peticion invalido.\",\n            \"send_cvv\": true,\n            \"subtotal_iva\": 0,\n            \"subtotal_iva0\": 5000,\n            \"sync_mode\": \"online\",\n            \"taxes\": {\n                \"agenciaDeViaje\": 0,\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0\n            },\n            \"transaction_id\": \"1727235441859168889\",\n            \"transaction_reference\": \"b14b955c-aa05-4be3-908c-224b456c617a\",\n            \"transaction_status\": \"DECLINED\",\n            \"transaction_type\": \"SALE\",\n            \"transaction_card_id\": \"6420c5bd-5a3f-45d2-8ac4-88de7b09958d\",\n            \"card_country_code\": \"EC\",\n            \"card_country\": \"Ecuador\",\n            \"original_bin\": \"54519515\",\n            \"processor_code\": \"K001\",\n            \"string_taxes\": \"{\\\"agenciaDeViaje\\\":0,\\\"iac\\\":0,\\\"tasaAeroportuaria\\\":0}\",\n            \"payment_method\": \"card\",\n            \"social_reason\": \"\",\n            \"merchant_category\": \"\",\n            \"tax_id\": \"\",\n            \"masked_credit_card\": \"545195XXXXXX5480\",\n            \"security\": {\n                \"3dsMpi\": \"Merchant\",\n                \"ip\": \"190.24.57.25\",\n                \"reason_code\": \"\"\n            },\n            \"string_metadata\": \"{\\\"key1\\\":\\\"value1\\\",\\\"key2\\\":\\\"value2\\\",\\\"key0\\\":\\\"value0\\\"}\",\n            \"order_details\": {\n                \"billing_details\": {\n                    \"city\": \"Monterrey\",\n                    \"country\": \"Mexico\",\n                    \"name\": \"John Doe\",\n                    \"phone\": \"+523988734644\",\n                    \"region\": \"Nuevo Leon\"\n                },\n                \"shipping_details\": {\n                    \"city\": \"Monterrey\",\n                    \"country\": \"Mexico\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+523988734644\",\n                    \"region\": \"Nuevo Leon\"\n                },\n                \"site_domain\": \"example.com\"\n            },\n            \"product_details\": {\n                \"product\": [\n                    {\n                        \"id\": \"198952AB\",\n                        \"price\": 15000,\n                        \"quantity\": 1,\n                        \"sku\": \"10101042\",\n                        \"title\": \"eBook Digital Services\"\n                    }\n                ]\n            }\n        },\n        {\n            \"amount\": {\n                \"subtotalIva0\": 5000,\n                \"iva\": 0,\n                \"subtotalIva\": 0,\n                \"extraTaxes\": {\n                    \"agenciaDeViaje\": 0,\n                    \"iac\": 0,\n                    \"tasaAeroportuaria\": 0\n                },\n                \"currency\": \"COP\",\n                \"ice\": 0\n            },\n            \"approved_transaction_amount\": 0,\n            \"bin_card\": \"558917\",\n            \"card_holder_name\": \"Laura Arciniegas\",\n            \"card_type\": \"Credit\",\n            \"contact_details\": {\n                \"document_number\": \"ABCD123456EF\",\n                \"document_type\": \"CURP\",\n                \"email\": \"user@example.com\",\n                \"first_name\": \"John\",\n                \"last_name\": \"Doe\",\n                \"phone_number\": \"+523988734644\"\n            },\n            \"country\": \"Colombia\",\n            \"created\": \"2024-09-25T03:43:07.000Z\",\n            \"credential_alias\": \"MAKALU Branch Colombia\",\n            \"credential_id\": \"f84742e3f38542aeb2d726f25753615e\",\n            \"currency_code\": \"COP\",\n            \"foreign_card\": true,\n            \"ice_value\": 0,\n            \"issuing_bank\": \"WooriCard Co., Ltd\",\n            \"iva_value\": 0,\n            \"last_four_digits\": \"3748\",\n            \"merchant_id\": \"20000000100799492000\",\n            \"merchant_name\": \"MAKALU Branch Colombia\",\n            \"metadata\": {\n                \"key1\": \"value1\",\n                \"key2\": \"value2\",\n                \"key0\": \"value0\"\n            },\n            \"payment_brand\": \"Mastercard\",\n            \"plcc\": false,\n            \"processor\": {\n                \"code\": \"566\",\n                \"message\": \"El token es invalido , o ya fue usado en otra transaccion.\"\n            },\n            \"processor_type\": \"aggregator_formal\",\n            \"public_credential_id\": \"a612670532f5403c95fa64423e9c48de\",\n            \"request_amount\": 5000,\n            \"response_code\": \"577\",\n            \"response_text\": \"El token de la transaccion no es valido\",\n            \"send_cvv\": true,\n            \"subtotal_iva\": 0,\n            \"subtotal_iva0\": 5000,\n            \"sync_mode\": \"online\",\n            \"taxes\": {\n                \"agenciaDeViaje\": 0,\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0\n            },\n            \"transaction_id\": \"17272357873279010\",\n            \"transaction_reference\": \"3a2f2865-9203-4bc7-a5b1-94d35d53e088\",\n            \"transaction_status\": \"DECLINED\",\n            \"transaction_type\": \"SALE\",\n            \"transaction_card_id\": \"3bb94075-e3ef-4fda-bb2d-69030a889e49\",\n            \"card_country_code\": \"KR\",\n            \"card_country\": \"South Korea\",\n            \"original_bin\": \"55891735\",\n            \"processor_code\": \"577\",\n            \"string_taxes\": \"{\\\"agenciaDeViaje\\\":0,\\\"iac\\\":0,\\\"tasaAeroportuaria\\\":0}\",\n            \"payment_method\": \"card\",\n            \"social_reason\": \"\",\n            \"merchant_category\": \"\",\n            \"tax_id\": \"\",\n            \"masked_credit_card\": \"558917XXXXXX3748\",\n            \"security\": {\n                \"3dsMpi\": \"Merchant\",\n                \"ip\": \"190.24.57.25\",\n                \"reason_code\": \"\"\n            },\n            \"string_metadata\": \"{\\\"key1\\\":\\\"value1\\\",\\\"key2\\\":\\\"value2\\\",\\\"key0\\\":\\\"value0\\\"}\",\n            \"order_details\": {\n                \"billing_details\": {\n                    \"city\": \"Monterrey\",\n                    \"country\": \"Mexico\",\n                    \"name\": \"John Doe\",\n                    \"phone\": \"+523988734644\",\n                    \"region\": \"Nuevo Leon\"\n                },\n                \"shipping_details\": {\n                    \"city\": \"Monterrey\",\n                    \"country\": \"Mexico\",\n                    \"name\": \"John Doe\",\n                    \"phone\": \"+523988734644\",\n                    \"region\": \"Nuevo Leon\"\n                },\n                \"site_domain\": \"example.com\"\n            },\n            \"product_details\": {\n                \"product\": [\n                    {\n                        \"id\": \"198952AB\",\n                        \"price\": 15000,\n                        \"quantity\": 1,\n                        \"sku\": \"10101042\",\n                        \"title\": \"eBook Digital Services\"\n                    }\n                ]\n            }\n        },\n        {\n            \"amount\": {\n                \"subtotalIva0\": 50000,\n                \"iva\": 0,\n                \"subtotalIva\": 0,\n                \"extraTaxes\": {\n                    \"agenciaDeViaje\": 0,\n                    \"iac\": 0,\n                    \"tasaAeroportuaria\": 0\n                },\n                \"currency\": \"COP\",\n                \"ice\": 0\n            },\n            \"approved_transaction_amount\": 0,\n            \"bin_card\": \"545195\",\n            \"card_holder_name\": \"Laura Arciniegas\",\n            \"card_type\": \"Credit\",\n            \"contact_details\": {\n                \"document_number\": \"1030632221\",\n                \"document_type\": \"CC\",\n                \"email\": \"la.pa.arto@gmail.com\",\n                \"first_name\": \"Laura\",\n                \"last_name\": \"Arciniegas\",\n                \"phone_number\": \"+573143245561\"\n            },\n            \"country\": \"Colombia\",\n            \"created\": \"2024-09-25T03:48:13.000Z\",\n            \"credential_alias\": \"MAKALU Branch Colombia\",\n            \"credential_id\": \"f84742e3f38542aeb2d726f25753615e\",\n            \"currency_code\": \"COP\",\n            \"foreign_card\": true,\n            \"ice_value\": 0,\n            \"issuing_bank\": \"Banco de la Produccion S.A. (PRODUBANCO)\",\n            \"iva_value\": 0,\n            \"last_four_digits\": \"5480\",\n            \"merchant_id\": \"20000000100799492000\",\n            \"merchant_name\": \"MAKALU Branch Colombia\",\n            \"metadata\": {\n                \"key1\": \"value1\",\n                \"key2\": \"value2\",\n                \"key0\": \"value0\"\n            },\n            \"payment_brand\": \"Mastercard\",\n            \"plcc\": false,\n            \"processor\": {\n                \"code\": \"K006\",\n                \"message\": \"Transacción declinada.\"\n            },\n            \"processor_type\": \"aggregator_formal\",\n            \"public_credential_id\": \"a612670532f5403c95fa64423e9c48de\",\n            \"request_amount\": 50000,\n            \"response_code\": \"K001\",\n            \"response_text\": \"Cuerpo de la peticion invalido.\",\n            \"send_cvv\": true,\n            \"subtotal_iva\": 0,\n            \"subtotal_iva0\": 50000,\n            \"sync_mode\": \"online\",\n            \"taxes\": {\n                \"agenciaDeViaje\": 0,\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0\n            },\n            \"transaction_id\": \"1727236093176895388\",\n            \"transaction_reference\": \"9f9015a4-0c20-4363-816f-d851e4577660\",\n            \"transaction_status\": \"DECLINED\",\n            \"transaction_type\": \"SALE\",\n            \"transaction_card_id\": \"6420c5bd-5a3f-45d2-8ac4-88de7b09958d\",\n            \"card_country_code\": \"EC\",\n            \"card_country\": \"Ecuador\",\n            \"original_bin\": \"54519515\",\n            \"processor_code\": \"K001\",\n            \"string_taxes\": \"{\\\"agenciaDeViaje\\\":0,\\\"iac\\\":0,\\\"tasaAeroportuaria\\\":0}\",\n            \"payment_method\": \"card\",\n            \"social_reason\": \"\",\n            \"merchant_category\": \"\",\n            \"tax_id\": \"\",\n            \"masked_credit_card\": \"545195XXXXXX5480\",\n            \"security\": {\n                \"3dsMpi\": \"Merchant\",\n                \"ip\": \"190.24.57.25\",\n                \"reason_code\": \"\"\n            },\n            \"string_metadata\": \"{\\\"key1\\\":\\\"value1\\\",\\\"key2\\\":\\\"value2\\\",\\\"key0\\\":\\\"value0\\\"}\",\n            \"order_details\": {\n                \"billing_details\": {\n                    \"city\": \"Monterrey\",\n                    \"country\": \"Mexico\",\n                    \"name\": \"John Doe\",\n                    \"phone\": \"+523988734644\",\n                    \"region\": \"Nuevo Leon\"\n                },\n                \"shipping_details\": {\n                    \"city\": \"Monterrey\",\n                    \"country\": \"Mexico\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+523988734644\",\n                    \"region\": \"Nuevo Leon\"\n                },\n                \"site_domain\": \"example.com\"\n            },\n            \"product_details\": {\n                \"product\": [\n                    {\n                        \"id\": \"198952AB\",\n                        \"price\": 15000,\n                        \"quantity\": 1,\n                        \"sku\": \"10101042\",\n                        \"title\": \"eBook Digital Services\"\n                    }\n                ]\n            }\n        },\n        {\n            \"amount\": {\n                \"subtotalIva0\": 50000,\n                \"iva\": 0,\n                \"subtotalIva\": 0,\n                \"extraTaxes\": {\n                    \"agenciaDeViaje\": 0,\n                    \"iac\": 0,\n                    \"tasaAeroportuaria\": 0\n                },\n                \"currency\": \"COP\",\n                \"ice\": 0\n            },\n            \"approved_transaction_amount\": 0,\n            \"bin_card\": \"545195\",\n            \"card_holder_name\": \"Laura Arciniegas\",\n            \"card_type\": \"Credit\",\n            \"contact_details\": {\n                \"document_number\": \"1030632221\",\n                \"document_type\": \"CC\",\n                \"email\": \"la.pa.arto@gmail.com\",\n                \"first_name\": \"Laura\",\n                \"last_name\": \"Arciniegas\",\n                \"phone_number\": \"+573143245561\"\n            },\n            \"country\": \"Colombia\",\n            \"created\": \"2024-09-25T03:49:55.000Z\",\n            \"credential_alias\": \"MAKALU Branch Colombia\",\n            \"credential_id\": \"f84742e3f38542aeb2d726f25753615e\",\n            \"currency_code\": \"COP\",\n            \"foreign_card\": true,\n            \"ice_value\": 0,\n            \"issuing_bank\": \"Banco de la Produccion S.A. (PRODUBANCO)\",\n            \"iva_value\": 0,\n            \"last_four_digits\": \"5480\",\n            \"merchant_id\": \"20000000100799492000\",\n            \"merchant_name\": \"MAKALU Branch Colombia\",\n            \"metadata\": {\n                \"key1\": \"value1\",\n                \"key2\": \"value2\",\n                \"key0\": \"value0\"\n            },\n            \"payment_brand\": \"Mastercard\",\n            \"plcc\": false,\n            \"processor\": {\n                \"code\": \"566\",\n                \"message\": \"El token es invalido , o ya fue usado en otra transaccion.\"\n            },\n            \"processor_type\": \"aggregator_formal\",\n            \"public_credential_id\": \"a612670532f5403c95fa64423e9c48de\",\n            \"request_amount\": 50000,\n            \"response_code\": \"577\",\n            \"response_text\": \"El token de la transaccion no es valido\",\n            \"send_cvv\": true,\n            \"subtotal_iva\": 0,\n            \"subtotal_iva0\": 50000,\n            \"sync_mode\": \"online\",\n            \"taxes\": {\n                \"agenciaDeViaje\": 0,\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0\n            },\n            \"transaction_id\": \"1727236195735845741\",\n            \"transaction_reference\": \"9f9015a4-0c20-4363-816f-d851e4577660\",\n            \"transaction_status\": \"DECLINED\",\n            \"transaction_type\": \"SALE\",\n            \"transaction_card_id\": \"6420c5bd-5a3f-45d2-8ac4-88de7b09958d\",\n            \"card_country_code\": \"EC\",\n            \"card_country\": \"Ecuador\",\n            \"original_bin\": \"54519515\",\n            \"processor_code\": \"577\",\n            \"string_taxes\": \"{\\\"agenciaDeViaje\\\":0,\\\"iac\\\":0,\\\"tasaAeroportuaria\\\":0}\",\n            \"payment_method\": \"card\",\n            \"social_reason\": \"\",\n            \"merchant_category\": \"\",\n            \"tax_id\": \"\",\n            \"masked_credit_card\": \"545195XXXXXX5480\",\n            \"security\": {\n                \"3dsMpi\": \"Merchant\",\n                \"ip\": \"190.24.57.25\",\n                \"reason_code\": \"\"\n            },\n            \"string_metadata\": \"{\\\"key1\\\":\\\"value1\\\",\\\"key2\\\":\\\"value2\\\",\\\"key0\\\":\\\"value0\\\"}\",\n            \"order_details\": {\n                \"billing_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"shipping_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"site_domain\": \"example.com\"\n            },\n            \"product_details\": {\n                \"product\": [\n                    {\n                        \"id\": \"198952AB\",\n                        \"price\": 15000,\n                        \"quantity\": 1,\n                        \"sku\": \"10101042\",\n                        \"title\": \"eBook Digital Services\"\n                    }\n                ]\n            }\n        },\n        {\n            \"amount\": {\n                \"subtotalIva0\": 50000,\n                \"iva\": 0,\n                \"subtotalIva\": 0,\n                \"extraTaxes\": {\n                    \"agenciaDeViaje\": 0,\n                    \"iac\": 0,\n                    \"tasaAeroportuaria\": 0\n                },\n                \"currency\": \"COP\",\n                \"ice\": 0\n            },\n            \"approved_transaction_amount\": 0,\n            \"bin_card\": \"545195\",\n            \"card_holder_name\": \"Laura Arciniegas\",\n            \"card_type\": \"Credit\",\n            \"contact_details\": {\n                \"document_number\": \"1030632221\",\n                \"document_type\": \"CC\",\n                \"email\": \"la.pa.arto@gmail.com\",\n                \"first_name\": \"Laura\",\n                \"last_name\": \"Arciniegas\",\n                \"phone_number\": \"+573143245561\"\n            },\n            \"country\": \"Colombia\",\n            \"created\": \"2024-09-25T03:50:59.000Z\",\n            \"credential_alias\": \"MAKALU Branch Colombia\",\n            \"credential_id\": \"f84742e3f38542aeb2d726f25753615e\",\n            \"currency_code\": \"COP\",\n            \"foreign_card\": true,\n            \"ice_value\": 0,\n            \"issuing_bank\": \"Banco de la Produccion S.A. (PRODUBANCO)\",\n            \"iva_value\": 0,\n            \"last_four_digits\": \"5480\",\n            \"merchant_id\": \"20000000100799492000\",\n            \"merchant_name\": \"MAKALU Branch Colombia\",\n            \"metadata\": {\n                \"key1\": \"value1\",\n                \"key2\": \"value2\",\n                \"key0\": \"value0\"\n            },\n            \"payment_brand\": \"Mastercard\",\n            \"plcc\": false,\n            \"processor\": {\n                \"code\": \"K006\",\n                \"message\": \"Transacción declinada.\"\n            },\n            \"processor_type\": \"aggregator_formal\",\n            \"public_credential_id\": \"a612670532f5403c95fa64423e9c48de\",\n            \"request_amount\": 50000,\n            \"response_code\": \"K001\",\n            \"response_text\": \"Cuerpo de la peticion invalido.\",\n            \"send_cvv\": true,\n            \"subtotal_iva\": 0,\n            \"subtotal_iva0\": 50000,\n            \"sync_mode\": \"online\",\n            \"taxes\": {\n                \"agenciaDeViaje\": 0,\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0\n            },\n            \"transaction_id\": \"1727236259542820964\",\n            \"transaction_reference\": \"65d68406-3d13-4e7b-b08d-7b38165a610a\",\n            \"transaction_status\": \"DECLINED\",\n            \"transaction_type\": \"SALE\",\n            \"transaction_card_id\": \"6420c5bd-5a3f-45d2-8ac4-88de7b09958d\",\n            \"card_country_code\": \"EC\",\n            \"card_country\": \"Ecuador\",\n            \"original_bin\": \"54519515\",\n            \"processor_code\": \"K001\",\n            \"string_taxes\": \"{\\\"agenciaDeViaje\\\":0,\\\"iac\\\":0,\\\"tasaAeroportuaria\\\":0}\",\n            \"payment_method\": \"card\",\n            \"social_reason\": \"\",\n            \"merchant_category\": \"\",\n            \"tax_id\": \"\",\n            \"masked_credit_card\": \"545195XXXXXX5480\",\n            \"security\": {\n                \"3dsMpi\": \"Merchant\",\n                \"ip\": \"190.24.57.25\",\n                \"reason_code\": \"\"\n            },\n            \"string_metadata\": \"{\\\"key1\\\":\\\"value1\\\",\\\"key2\\\":\\\"value2\\\",\\\"key0\\\":\\\"value0\\\"}\",\n            \"order_details\": {\n                \"billing_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"shipping_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"site_domain\": \"example.com\"\n            },\n            \"product_details\": {\n                \"product\": [\n                    {\n                        \"id\": \"198952AB\",\n                        \"price\": 15000,\n                        \"quantity\": 1,\n                        \"sku\": \"10101042\",\n                        \"title\": \"eBook Digital Services\"\n                    }\n                ]\n            }\n        },\n        {\n            \"amount\": {\n                \"subtotalIva0\": 50000,\n                \"iva\": 0,\n                \"subtotalIva\": 0,\n                \"extraTaxes\": {\n                    \"agenciaDeViaje\": 0,\n                    \"iac\": 0,\n                    \"tasaAeroportuaria\": 0\n                },\n                \"currency\": \"COP\",\n                \"ice\": 0\n            },\n            \"approved_transaction_amount\": 0,\n            \"bin_card\": \"545195\",\n            \"card_holder_name\": \"Laura Arciniegas\",\n            \"card_type\": \"Credit\",\n            \"contact_details\": {\n                \"document_number\": \"1030632221\",\n                \"document_type\": \"CC\",\n                \"email\": \"la.pa.arto@gmail.com\",\n                \"first_name\": \"Laura\",\n                \"last_name\": \"Arciniegas\",\n                \"phone_number\": \"+573143245561\"\n            },\n            \"country\": \"Colombia\",\n            \"created\": \"2024-09-25T03:51:08.000Z\",\n            \"credential_alias\": \"MAKALU Branch Colombia\",\n            \"credential_id\": \"f84742e3f38542aeb2d726f25753615e\",\n            \"currency_code\": \"COP\",\n            \"foreign_card\": true,\n            \"ice_value\": 0,\n            \"issuing_bank\": \"Banco de la Produccion S.A. (PRODUBANCO)\",\n            \"iva_value\": 0,\n            \"last_four_digits\": \"5480\",\n            \"merchant_id\": \"20000000100799492000\",\n            \"merchant_name\": \"MAKALU Branch Colombia\",\n            \"metadata\": {\n                \"key1\": \"value1\",\n                \"key2\": \"value2\",\n                \"key0\": \"value0\"\n            },\n            \"payment_brand\": \"Mastercard\",\n            \"plcc\": false,\n            \"processor\": {\n                \"code\": \"566\",\n                \"message\": \"El token es invalido , o ya fue usado en otra transaccion.\"\n            },\n            \"processor_type\": \"aggregator_formal\",\n            \"public_credential_id\": \"a612670532f5403c95fa64423e9c48de\",\n            \"request_amount\": 50000,\n            \"response_code\": \"577\",\n            \"response_text\": \"El token de la transaccion no es valido\",\n            \"send_cvv\": true,\n            \"subtotal_iva\": 0,\n            \"subtotal_iva0\": 50000,\n            \"sync_mode\": \"online\",\n            \"taxes\": {\n                \"agenciaDeViaje\": 0,\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0\n            },\n            \"transaction_id\": \"1727236268789967560\",\n            \"transaction_reference\": \"65d68406-3d13-4e7b-b08d-7b38165a610a\",\n            \"transaction_status\": \"DECLINED\",\n            \"transaction_type\": \"SALE\",\n            \"transaction_card_id\": \"6420c5bd-5a3f-45d2-8ac4-88de7b09958d\",\n            \"card_country_code\": \"EC\",\n            \"card_country\": \"Ecuador\",\n            \"original_bin\": \"54519515\",\n            \"processor_code\": \"577\",\n            \"string_taxes\": \"{\\\"agenciaDeViaje\\\":0,\\\"iac\\\":0,\\\"tasaAeroportuaria\\\":0}\",\n            \"payment_method\": \"card\",\n            \"social_reason\": \"\",\n            \"merchant_category\": \"\",\n            \"tax_id\": \"\",\n            \"masked_credit_card\": \"545195XXXXXX5480\",\n            \"security\": {\n                \"3dsMpi\": \"Merchant\",\n                \"ip\": \"190.24.57.25\",\n                \"reason_code\": \"\"\n            },\n            \"string_metadata\": \"{\\\"key1\\\":\\\"value1\\\",\\\"key2\\\":\\\"value2\\\",\\\"key0\\\":\\\"value0\\\"}\",\n            \"order_details\": {\n                \"billing_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"shipping_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"site_domain\": \"example.com\"\n            },\n            \"product_details\": {\n                \"product\": [\n                    {\n                        \"id\": \"198952AB\",\n                        \"price\": 15000,\n                        \"quantity\": 1,\n                        \"sku\": \"10101042\",\n                        \"title\": \"eBook Digital Services\"\n                    }\n                ]\n            }\n        },\n        {\n            \"amount\": {\n                \"subtotalIva0\": 50000,\n                \"iva\": 0,\n                \"subtotalIva\": 0,\n                \"extraTaxes\": {\n                    \"agenciaDeViaje\": 0,\n                    \"iac\": 0,\n                    \"tasaAeroportuaria\": 0\n                },\n                \"currency\": \"COP\",\n                \"ice\": 0\n            },\n            \"approved_transaction_amount\": 0,\n            \"bin_card\": \"545195\",\n            \"card_holder_name\": \"Laura Arciniegas\",\n            \"card_type\": \"Credit\",\n            \"contact_details\": {\n                \"document_number\": \"1030632221\",\n                \"document_type\": \"CC\",\n                \"email\": \"la.pa.arto@gmail.com\",\n                \"first_name\": \"Laura\",\n                \"last_name\": \"Arciniegas\",\n                \"phone_number\": \"+573143245561\"\n            },\n            \"country\": \"Colombia\",\n            \"created\": \"2024-09-25T03:51:41.000Z\",\n            \"credential_alias\": \"MAKALU Branch Colombia\",\n            \"credential_id\": \"f84742e3f38542aeb2d726f25753615e\",\n            \"currency_code\": \"COP\",\n            \"foreign_card\": true,\n            \"ice_value\": 0,\n            \"issuing_bank\": \"Banco de la Produccion S.A. (PRODUBANCO)\",\n            \"iva_value\": 0,\n            \"last_four_digits\": \"5480\",\n            \"merchant_id\": \"20000000100799492000\",\n            \"merchant_name\": \"MAKALU Branch Colombia\",\n            \"metadata\": {\n                \"key1\": \"value1\",\n                \"key2\": \"value2\",\n                \"key0\": \"value0\"\n            },\n            \"payment_brand\": \"Mastercard\",\n            \"plcc\": false,\n            \"processor\": {\n                \"code\": \"K006\",\n                \"message\": \"Transacción declinada.\"\n            },\n            \"processor_type\": \"aggregator_formal\",\n            \"public_credential_id\": \"a612670532f5403c95fa64423e9c48de\",\n            \"request_amount\": 50000,\n            \"response_code\": \"K001\",\n            \"response_text\": \"Cuerpo de la peticion invalido.\",\n            \"send_cvv\": true,\n            \"subtotal_iva\": 0,\n            \"subtotal_iva0\": 50000,\n            \"sync_mode\": \"online\",\n            \"taxes\": {\n                \"agenciaDeViaje\": 0,\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0\n            },\n            \"transaction_id\": \"1727236301701378284\",\n            \"transaction_reference\": \"a1ed77ef-0043-40f2-9a53-5b04fea66308\",\n            \"transaction_status\": \"DECLINED\",\n            \"transaction_type\": \"SALE\",\n            \"transaction_card_id\": \"6420c5bd-5a3f-45d2-8ac4-88de7b09958d\",\n            \"card_country_code\": \"EC\",\n            \"card_country\": \"Ecuador\",\n            \"original_bin\": \"54519515\",\n            \"processor_code\": \"K001\",\n            \"string_taxes\": \"{\\\"agenciaDeViaje\\\":0,\\\"iac\\\":0,\\\"tasaAeroportuaria\\\":0}\",\n            \"payment_method\": \"card\",\n            \"social_reason\": \"\",\n            \"merchant_category\": \"\",\n            \"tax_id\": \"\",\n            \"masked_credit_card\": \"545195XXXXXX5480\",\n            \"security\": {\n                \"3dsMpi\": \"Merchant\",\n                \"ip\": \"190.24.57.25\",\n                \"reason_code\": \"\"\n            },\n            \"string_metadata\": \"{\\\"key1\\\":\\\"value1\\\",\\\"key2\\\":\\\"value2\\\",\\\"key0\\\":\\\"value0\\\"}\",\n            \"order_details\": {\n                \"billing_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"shipping_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"site_domain\": \"example.com\"\n            },\n            \"product_details\": {\n                \"product\": [\n                    {\n                        \"id\": \"198952AB\",\n                        \"price\": 15000,\n                        \"quantity\": 1,\n                        \"sku\": \"10101042\",\n                        \"title\": \"eBook Digital Services\"\n                    }\n                ]\n            }\n        },\n        {\n            \"amount\": {\n                \"subtotalIva0\": 50000,\n                \"iva\": 0,\n                \"subtotalIva\": 0,\n                \"extraTaxes\": {\n                    \"agenciaDeViaje\": 0,\n                    \"iac\": 0,\n                    \"tasaAeroportuaria\": 0\n                },\n                \"currency\": \"COP\",\n                \"ice\": 0\n            },\n            \"approved_transaction_amount\": 0,\n            \"bin_card\": \"545195\",\n            \"card_holder_name\": \"Laura Arciniegas\",\n            \"card_type\": \"Credit\",\n            \"contact_details\": {\n                \"document_number\": \"1030632221\",\n                \"document_type\": \"CC\",\n                \"email\": \"la.pa.arto@gmail.com\",\n                \"first_name\": \"Laura\",\n                \"last_name\": \"Arciniegas\",\n                \"phone_number\": \"+573143245561\"\n            },\n            \"country\": \"Colombia\",\n            \"created\": \"2024-09-25T03:54:13.000Z\",\n            \"credential_alias\": \"MAKALU Branch Colombia\",\n            \"credential_id\": \"f84742e3f38542aeb2d726f25753615e\",\n            \"credit_type\": \"01\",\n            \"currency_code\": \"COP\",\n            \"foreign_card\": true,\n            \"grace_months\": \"00\",\n            \"ice_value\": 0,\n            \"issuing_bank\": \"Banco de la Produccion S.A. (PRODUBANCO)\",\n            \"iva_value\": 0,\n            \"last_four_digits\": \"5480\",\n            \"merchant_id\": \"20000000100799492000\",\n            \"merchant_name\": \"MAKALU Branch Colombia\",\n            \"number_of_months\": 3,\n            \"payment_brand\": \"Mastercard\",\n            \"plcc\": false,\n            \"processor\": {\n                \"code\": \"566\",\n                \"message\": \"El token es invalido , o ya fue usado en otra transaccion.\"\n            },\n            \"processor_type\": \"aggregator_formal\",\n            \"public_credential_id\": \"a612670532f5403c95fa64423e9c48de\",\n            \"request_amount\": 50000,\n            \"response_code\": \"577\",\n            \"response_text\": \"El token de la transaccion no es valido\",\n            \"send_cvv\": true,\n            \"subtotal_iva\": 0,\n            \"subtotal_iva0\": 50000,\n            \"sync_mode\": \"online\",\n            \"taxes\": {\n                \"agenciaDeViaje\": 0,\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0\n            },\n            \"transaction_id\": \"1727236453836644100\",\n            \"transaction_reference\": \"a1ed77ef-0043-40f2-9a53-5b04fea66308\",\n            \"transaction_status\": \"DECLINED\",\n            \"transaction_type\": \"SALE\",\n            \"transaction_card_id\": \"6420c5bd-5a3f-45d2-8ac4-88de7b09958d\",\n            \"card_country_code\": \"EC\",\n            \"card_country\": \"Ecuador\",\n            \"original_bin\": \"54519515\",\n            \"processor_code\": \"577\",\n            \"string_taxes\": \"{\\\"agenciaDeViaje\\\":0,\\\"iac\\\":0,\\\"tasaAeroportuaria\\\":0}\",\n            \"payment_method\": \"card\",\n            \"social_reason\": \"\",\n            \"merchant_category\": \"\",\n            \"tax_id\": \"\",\n            \"masked_credit_card\": \"545195XXXXXX5480\",\n            \"security\": {\n                \"3dsMpi\": \"Merchant\",\n                \"ip\": \"190.24.57.25\",\n                \"reason_code\": \"\"\n            },\n            \"order_details\": {\n                \"billing_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"shipping_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"site_domain\": \"example.com\"\n            },\n            \"product_details\": {\n                \"product\": [\n                    {\n                        \"id\": \"198952AB\",\n                        \"price\": 15000,\n                        \"quantity\": 1,\n                        \"sku\": \"10101042\",\n                        \"title\": \"eBook Digital Services\"\n                    }\n                ]\n            }\n        },\n        {\n            \"amount\": {\n                \"subtotalIva0\": 0,\n                \"iva\": 0,\n                \"subtotalIva\": 0,\n                \"extraTaxes\": {\n                    \"agenciaDeViaje\": 0,\n                    \"iac\": 0,\n                    \"tasaAeroportuaria\": 0\n                },\n                \"currency\": \"COP\",\n                \"ice\": 0\n            },\n            \"approved_transaction_amount\": 0,\n            \"bin_card\": \"545195\",\n            \"card_holder_name\": \"Laura Arciniegas\",\n            \"card_type\": \"Credit\",\n            \"contact_details\": {\n                \"document_number\": \"1030632221\",\n                \"document_type\": \"CC\",\n                \"email\": \"la.pa.arto@gmail.com\",\n                \"first_name\": \"Laura\",\n                \"last_name\": \"Arciniegas\",\n                \"phone_number\": \"+573143245561\"\n            },\n            \"country\": \"Colombia\",\n            \"created\": \"2024-09-25T03:57:18.000Z\",\n            \"credential_alias\": \"MAKALU Branch Colombia\",\n            \"credential_id\": \"f84742e3f38542aeb2d726f25753615e\",\n            \"currency_code\": \"COP\",\n            \"foreign_card\": true,\n            \"ice_value\": 0,\n            \"issuing_bank\": \"Banco de la Produccion S.A. (PRODUBANCO)\",\n            \"iva_value\": 0,\n            \"last_four_digits\": \"5480\",\n            \"merchant_id\": \"20000000100799492000\",\n            \"merchant_name\": \"MAKALU Branch Colombia\",\n            \"metadata\": {\n                \"key1\": \"value1\",\n                \"key2\": \"value2\",\n                \"key0\": \"value0\"\n            },\n            \"payment_brand\": \"Mastercard\",\n            \"plcc\": false,\n            \"processor\": {\n                \"code\": \"566\",\n                \"message\": \"El token es invalido , o ya fue usado en otra transaccion.\"\n            },\n            \"processor_type\": \"aggregator_formal\",\n            \"public_credential_id\": \"a612670532f5403c95fa64423e9c48de\",\n            \"request_amount\": 0,\n            \"response_code\": \"577\",\n            \"response_text\": \"El token de la transaccion no es valido\",\n            \"send_cvv\": true,\n            \"subtotal_iva\": 0,\n            \"subtotal_iva0\": 0,\n            \"sync_mode\": \"online\",\n            \"taxes\": {\n                \"agenciaDeViaje\": 0,\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0\n            },\n            \"transaction_id\": \"1727236638539014909\",\n            \"transaction_reference\": \"a1ed77ef-0043-40f2-9a53-5b04fea66308\",\n            \"transaction_status\": \"DECLINED\",\n            \"transaction_type\": \"SALE\",\n            \"transaction_card_id\": \"6420c5bd-5a3f-45d2-8ac4-88de7b09958d\",\n            \"card_country_code\": \"EC\",\n            \"card_country\": \"Ecuador\",\n            \"original_bin\": \"54519515\",\n            \"processor_code\": \"577\",\n            \"string_taxes\": \"{\\\"agenciaDeViaje\\\":0,\\\"iac\\\":0,\\\"tasaAeroportuaria\\\":0}\",\n            \"payment_method\": \"card\",\n            \"social_reason\": \"\",\n            \"merchant_category\": \"\",\n            \"tax_id\": \"\",\n            \"masked_credit_card\": \"545195XXXXXX5480\",\n            \"security\": {\n                \"3dsMpi\": \"Merchant\",\n                \"ip\": \"190.24.57.25\",\n                \"reason_code\": \"\"\n            },\n            \"string_metadata\": \"{\\\"key1\\\":\\\"value1\\\",\\\"key2\\\":\\\"value2\\\",\\\"key0\\\":\\\"value0\\\"}\",\n            \"order_details\": {\n                \"billing_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"shipping_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"site_domain\": \"example.com\"\n            },\n            \"product_details\": {\n                \"product\": [\n                    {\n                        \"id\": \"198952AB\",\n                        \"price\": 15000,\n                        \"quantity\": 1,\n                        \"sku\": \"10101042\",\n                        \"title\": \"eBook Digital Services\"\n                    }\n                ]\n            }\n        },\n        {\n            \"amount\": {\n                \"subtotalIva0\": 0,\n                \"iva\": 0,\n                \"subtotalIva\": 0,\n                \"extraTaxes\": {\n                    \"agenciaDeViaje\": 0,\n                    \"iac\": 0,\n                    \"tasaAeroportuaria\": 0\n                },\n                \"currency\": \"COP\",\n                \"ice\": 0\n            },\n            \"approved_transaction_amount\": 0,\n            \"bin_card\": \"545195\",\n            \"card_holder_name\": \"Laura Arciniegas\",\n            \"card_type\": \"Credit\",\n            \"contact_details\": {\n                \"document_number\": \"1030632221\",\n                \"document_type\": \"CC\",\n                \"email\": \"la.pa.arto@gmail.com\",\n                \"first_name\": \"Laura\",\n                \"last_name\": \"Arciniegas\",\n                \"phone_number\": \"+573143245561\"\n            },\n            \"country\": \"Colombia\",\n            \"created\": \"2024-09-25T03:57:55.000Z\",\n            \"credential_alias\": \"MAKALU Branch Colombia\",\n            \"credential_id\": \"f84742e3f38542aeb2d726f25753615e\",\n            \"currency_code\": \"COP\",\n            \"foreign_card\": true,\n            \"ice_value\": 0,\n            \"issuing_bank\": \"Banco de la Produccion S.A. (PRODUBANCO)\",\n            \"iva_value\": 0,\n            \"last_four_digits\": \"5480\",\n            \"merchant_id\": \"20000000100799492000\",\n            \"merchant_name\": \"MAKALU Branch Colombia\",\n            \"metadata\": {\n                \"key1\": \"value1\",\n                \"key2\": \"value2\",\n                \"key0\": \"value0\"\n            },\n            \"payment_brand\": \"Mastercard\",\n            \"plcc\": false,\n            \"processor\": {\n                \"code\": \"K006\",\n                \"message\": \"Transacción declinada.\"\n            },\n            \"processor_type\": \"aggregator_formal\",\n            \"public_credential_id\": \"a612670532f5403c95fa64423e9c48de\",\n            \"request_amount\": 0,\n            \"response_code\": \"K001\",\n            \"response_text\": \"Cuerpo de la peticion invalido.\",\n            \"send_cvv\": true,\n            \"subtotal_iva\": 0,\n            \"subtotal_iva0\": 0,\n            \"sync_mode\": \"online\",\n            \"taxes\": {\n                \"agenciaDeViaje\": 0,\n                \"iac\": 0,\n                \"tasaAeroportuaria\": 0\n            },\n            \"transaction_id\": \"1727236675873913110\",\n            \"transaction_reference\": \"2b45d0d4-c218-40b9-9e41-c618ca494339\",\n            \"transaction_status\": \"DECLINED\",\n            \"transaction_type\": \"SALE\",\n            \"transaction_card_id\": \"6420c5bd-5a3f-45d2-8ac4-88de7b09958d\",\n            \"card_country_code\": \"EC\",\n            \"card_country\": \"Ecuador\",\n            \"original_bin\": \"54519515\",\n            \"processor_code\": \"K001\",\n            \"string_taxes\": \"{\\\"agenciaDeViaje\\\":0,\\\"iac\\\":0,\\\"tasaAeroportuaria\\\":0}\",\n            \"payment_method\": \"card\",\n            \"social_reason\": \"\",\n            \"merchant_category\": \"\",\n            \"tax_id\": \"\",\n            \"masked_credit_card\": \"545195XXXXXX5480\",\n            \"security\": {\n                \"3dsMpi\": \"Merchant\",\n                \"ip\": \"190.24.57.25\",\n                \"reason_code\": \"\"\n            },\n            \"string_metadata\": \"{\\\"key1\\\":\\\"value1\\\",\\\"key2\\\":\\\"value2\\\",\\\"key0\\\":\\\"value0\\\"}\",\n            \"order_details\": {\n                \"billing_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"shipping_details\": {\n                    \"city\": \"Bogotá D.C.\",\n                    \"country\": \"Colombia\",\n                    \"name\": \"Laura Arciniegas\",\n                    \"phone\": \"+573143245561\",\n                    \"region\": \"Bogotá D.C.\"\n                },\n                \"site_domain\": \"example.com\"\n            },\n            \"product_details\": {\n                \"product\": [\n                    {\n                        \"id\": \"198952AB\",\n                        \"price\": 15000,\n                        \"quantity\": 1,\n                        \"sku\": \"10101042\",\n                        \"title\": \"eBook Digital Services\"\n                    }\n                ]\n            }\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
